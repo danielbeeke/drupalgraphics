@@ -1,0 +1,25 @@
+@import 'morph-to';
+
+.card {
+    background: blue;
+    float: right;
+    position: relative;
+    display: block;
+    margin: 30px;
+}
+
+.card .button {
+    display: block;
+    padding: 20px;
+}
+
+.card .overlay {
+    padding: 40px;
+    background: red;
+}
+
+.wrapper {
+    margin: 0 auto 100px;
+    width: 800px;
+}
+

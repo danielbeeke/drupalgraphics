@@ -1,0 +1,41 @@
+$speed: .5s;
+
+.morphTo-processed .button {
+    cursor: pointer;
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    transition: opacity ($speed / 4) ease-in-out ($speed * 2);
+}
+
+.morphTo-processed .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: clip $speed ease-in-out $speed, z-index $speed ease-in-out ($speed * 2), opacity $speed ease-in-out ($speed * 2);
+}
+
+.morphTo-processed .overlay--content {
+    opacity: 0;
+    transition: opacity ($speed / 4) ease-in-out;
+}
+
+.morphTo-processed.expanded .button {
+    opacity: 0;
+    transition: opacity ($speed / 4) ease-in-out;
+}
+
+.morphTo-processed.expanded .overlay {
+    z-index: 999;
+    opacity: 1;
+    transition: clip $speed ease-in-out;
+}
+
+.morphTo-processed.expanded .overlay--content {
+    opacity: 1;
+    transition: opacity ($speed / 4) ease-in-out $speed;
+}

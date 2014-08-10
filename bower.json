@@ -1,0 +1,10 @@
+{
+  "name": "drupalgraphics",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "twig.js": "~0.7.2"
+  },
+  "devDependencies": {}
+}
