@@ -2,7 +2,7 @@
 
     var pluginName = "morphTo",
         defaults = {
-            padding: 20
+            padding: 50
         };
 
     // The actual plugin constructor
@@ -24,7 +24,9 @@
 
             $(that.element).on('click touchend', function (event) {
 
-                if (!$(event.target).parents('.overlay').length) {
+                if (!$(event.target).parents('.overlay').length && !$(event.target).hasClass('overlay')) {
+                    $('body').addClass('has-active-morphTo')
+
                     $('.overlay', that.element).css('clip', 'auto')
 
                     that.setClip()
@@ -45,6 +47,8 @@
             $('.overlay--close', this.element).on('click touchend', function () {
                 $(that.element).removeClass('expanded')
                 that.setClip()
+                $('body').removeClass('has-active-morphTo')
+
                 return false
             })
 
